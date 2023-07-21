@@ -1,11 +1,9 @@
 import express from 'express';
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import https from 'https';
-const cors = require('cors');
 
 const app = express();
 const port = 3000;
-app.use(cors());
 
 app.use(express.json());
 
@@ -31,6 +29,9 @@ function convertHeadersToAxiosConfig(headers: any): AxiosRequestConfig['headers'
   }
   return convertedHeaders;
 }
+app.get('/', (req, res) => {
+  res.send('Welcome to the home page!');
+});
 
 app.all('*', (req, res) => {
   const { method, body, headers } = req;
