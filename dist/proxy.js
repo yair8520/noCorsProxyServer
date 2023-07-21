@@ -5,10 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const axios_1 = __importDefault(require("axios"));
-const cors = require('cors');
 const app = (0, express_1.default)();
 const port = 3000;
-app.use(cors());
 app.use(express_1.default.json());
 function convertHeadersToAxiosConfig(headers) {
     const convertedHeaders = {};
@@ -31,6 +29,9 @@ function convertHeadersToAxiosConfig(headers) {
     }
     return convertedHeaders;
 }
+app.get('/', (req, res) => {
+    res.send('Welcome to the home page!');
+});
 app.all('*', (req, res) => {
     const { method, body, headers } = req;
     const targetUrl = req.url.slice(1);
