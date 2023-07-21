@@ -5,9 +5,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const axios_1 = __importDefault(require("axios"));
+const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
-app.use(express_1.default.json());
+const allowedOrigins = ['https://yair8520.github.io', 'http://localhost:3000'];
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (allowedOrigins.includes(origin) || !origin) {
+            callback(null, true);
+        }
+        else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+};
+app.use((0, cors_1.default)(corsOptions));
 function convertHeadersToAxiosConfig(headers) {
     const convertedHeaders = {};
     const commonHeaders = [
