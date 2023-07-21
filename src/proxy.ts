@@ -3,8 +3,7 @@ import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import https from 'https';
 
 const app = express();
-const port = 3000;
-
+const port = process.env.PORT || 3000;
 app.use(express.json());
 
 function convertHeadersToAxiosConfig(headers: any): AxiosRequestConfig['headers'] {
