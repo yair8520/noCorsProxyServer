@@ -23,11 +23,7 @@ router.all('/:url(*)', (req, res) => {
         })
         .catch((error: AxiosError) => {
             return res.send(error)
-            // if (error.response && error.response.status) {
-            //     res.status(error.response.status).json(error);
-            // } else {
-            //     res.status(500).json({ error: 'Could not send request, Verify your request' });
-            // }
+
         });
 
 
