@@ -1,10 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = require("express");
 const axios_1 = require("../helpers/axios");
+const express_1 = require("express");
 const router = (0, express_1.Router)();
-router.all('/:url(*)', (req, res) => {
+router.all('/:url(*)', (req, res, next) => {
     const { method, body, headers } = req;
+    console.log("aoll", body);
     const targetUrl = req.url.slice(1);
     if (targetUrl === 'favicon.ico') {
         res.sendStatus(204);
@@ -22,11 +23,6 @@ router.all('/:url(*)', (req, res) => {
     })
         .catch((error) => {
         return res.send(error);
-        // if (error.response && error.response.status) {
-        //     res.status(error.response.status).json(error);
-        // } else {
-        //     res.status(500).json({ error: 'Could not send request, Verify your request' });
-        // }
     });
 });
 exports.default = router;
