@@ -18,7 +18,7 @@ This server acts as a proxy between your front-end application and external APIs
 3. Make a request to the NoCORS Proxy Server:
    - To make a request, simply call the HTTP client's method (e.g., axios.get, axios.post) with the desired URL as follows:
      ```javascript
-     axios.get('https://nocorsproxyserver-91f188606107.herokuapp.com/https://jsonplaceholder.typicode.com/todos/')
+     axios.get('https://nocorsproxyserver-b23bc189a395.herokuapp.com/api/https://jsonplaceholder.typicode.com/todos/')
        .then(response => {
          // Handle the response data here
          console.log(response.data);
