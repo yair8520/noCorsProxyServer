@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "ISC", 
   "dependencies": {
     "@types/node": "^20.4.2",
     "@types/node-fetch": "^2.6.4",
