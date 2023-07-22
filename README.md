@@ -27,4 +27,4 @@ This server acts as a proxy between your front-end application and external APIs
 
 The NoCORS Proxy Server ensures that the appropriate CORS headers are added to the response, allowing your client-side application to access the requested API data without CORS-related issues.
 
-Author: Yair Gabay
+Author: Yair Gabay 
