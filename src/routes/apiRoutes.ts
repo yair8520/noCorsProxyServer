@@ -19,7 +19,7 @@ router.all('/:url(*)', (req, res) => {
 
     makeAxiosCall(axiosConfig)
         .then((response: AxiosResponse) => {
-            res.status(response.status).json(response.data);
+            res.status(response.status).json(response);
         })
         .catch((error: AxiosError) => {
             return res.send(error)
