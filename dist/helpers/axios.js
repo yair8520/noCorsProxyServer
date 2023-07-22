@@ -30,17 +30,8 @@ exports.convertHeadersToAxiosConfig = convertHeadersToAxiosConfig;
 const makeAxiosCall = (axiosConfig) => {
     return new Promise((resolve, reject) => {
         (0, axios_1.default)(axiosConfig)
-            .then((response) => {
-            resolve(response);
-        })
-            .catch((error) => {
-            if (error.response) {
-                reject(error.response);
-            }
-            else {
-                reject({ status: 500, data: { error: 'Proxy Error' } });
-            }
-        });
+            .then((response) => resolve(response))
+            .catch((error) => reject(error));
     });
 };
 exports.makeAxiosCall = makeAxiosCall;

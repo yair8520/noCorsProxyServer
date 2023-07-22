@@ -1,6 +1,6 @@
 import { Router, } from 'express';
 import { convertHeadersToAxiosConfig, makeAxiosCall } from '../helpers/axios';
-import { AxiosRequestConfig } from 'axios';
+import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 const router = Router();
 
 router.all('/:url(*)', (req, res) => {
@@ -14,18 +14,18 @@ router.all('/:url(*)', (req, res) => {
         method,
         url: targetUrl,
         data: body,
-         headers: convertHeadersToAxiosConfig(headers),
+        headers: convertHeadersToAxiosConfig(headers),
     };
 
     makeAxiosCall(axiosConfig)
-        .then((response) => {
+        .then((response:AxiosResponse) => {
             res.status(response.status).json(response.data);
         })
-        .catch((error) => {
-            if (error.status && error.data) {
-                res.status(error.status).json(error.data);
+        .catch((error: AxiosError) => {
+            if (error.response && error.response.status) {
+                res.status(error.response.status).json(error.response.data);
             } else {
-                res.status(500).json({ error: 'Proxy Error' });
+                res.status(500).json({ error: 'Could not send request, Verify your request' });
             }
         });
 

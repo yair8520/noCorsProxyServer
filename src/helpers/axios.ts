@@ -1,4 +1,4 @@
-import { AxiosRequestConfig, AxiosResponse } from "axios";
+import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 import axios from 'axios'
 export function convertHeadersToAxiosConfig(headers: any): AxiosRequestConfig['headers'] {
     const convertedHeaders: AxiosRequestConfig['headers'] = {};
@@ -14,7 +14,6 @@ export function convertHeadersToAxiosConfig(headers: any): AxiosRequestConfig['h
         "Content-Length",
         "Host",
     ];
-
     for (const key of Object.keys(headers)) {
         if (commonHeaders.includes(key.toLowerCase())) {
             convertedHeaders[key] = headers[key] as string;
@@ -23,20 +22,12 @@ export function convertHeadersToAxiosConfig(headers: any): AxiosRequestConfig['h
     return convertedHeaders;
 }
 
+
 export const makeAxiosCall = (axiosConfig: AxiosRequestConfig): Promise<AxiosResponse> => {
     return new Promise((resolve, reject) => {
         axios(axiosConfig)
-            .then((response: AxiosResponse) => {
-                resolve(response);
-            })
-            .catch((error: any) => {
-                if (error.response) {
-                    reject(error.response);
-                } else {
-                    reject({ status: 500, data: { error: 'Proxy Error' } });
-                }
-            });
+            .then((response: AxiosResponse) => resolve(response))
+            .catch((error: AxiosError) => reject(error));
     });
 };
-
 
