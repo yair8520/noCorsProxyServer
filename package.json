@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\"",
     "start": "node dist/index.js",
-    "prepush": "./push-to-multiple-remotes.sh"
+    "prepush": "push-to-multiple-remotes.sh"
   },
   "keywords": [],
   "author": "",
