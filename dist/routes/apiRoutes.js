@@ -21,12 +21,12 @@ router.all('/:url(*)', (req, res) => {
         res.status(response.status).json(response.data);
     })
         .catch((error) => {
-        if (error.response && error.response.status) {
-            res.status(error.response.status).json(error.response.data);
-        }
-        else {
-            res.status(500).json({ error: 'Could not send request, Verify your request' });
-        }
+        return res.send(error);
+        // if (error.response && error.response.status) {
+        //     res.status(error.response.status).json(error);
+        // } else {
+        //     res.status(500).json({ error: 'Could not send request, Verify your request' });
+        // }
     });
 });
 exports.default = router;
