@@ -9,7 +9,7 @@ const homeRoutes_1 = __importDefault(require("./routes/homeRoutes"));
 const apiRoutes_1 = __importDefault(require("./routes/apiRoutes"));
 const body_parser_1 = require("body-parser");
 const app = (0, express_1.default)();
-const port = 80;
+const port = process.env.PORT || 3000;
 const allowedOrigins = ['https://yair8520.github.io', 'http://localhost:3000'];
 const corsOptions = {
     origin: function (origin, callback) {
