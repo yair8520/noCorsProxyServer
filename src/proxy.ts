@@ -6,7 +6,7 @@ import { json, } from 'body-parser';
 import { AxiosResponse } from 'axios';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 80;
 const allowedOrigins = ['https://yair8520.github.io', 'http://localhost:3000'];
 const corsOptions = {
   origin: function (origin: any, callback: any) {
