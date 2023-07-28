@@ -9,7 +9,7 @@ const router = express_1.default.Router();
 router.post('/', (req, res, next) => {
     const senderIP = req.ip;
     console.log(`Received webhook request from IP: ${senderIP}`);
-    (0, child_process_1.exec)('sh ../../deploy.sh', (error, stdout, stderr) => {
+    (0, child_process_1.exec)('sh /home/ec2-user/noCorsProxyServer/deploy.sh', (error, stdout, stderr) => {
         if (error) {
             console.error(`Error executing update script: ${error.message}`);
             res.status(500).send(error.message);
