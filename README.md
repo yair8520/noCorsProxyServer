@@ -21,7 +21,7 @@ This server acts as a proxy between your front-end application and external APIs
    - To make a request, simply call the HTTP client's method (e.g., axios.get, axios.post) with the desired URL as follows:
      ```javascript
      axios.defaults.baseURL =
-       "https://nocorsproxyserver-b23bc189a395.herokuapp.com/api/";
+       "https://ec2-16-171-200-227.eu-north-1.compute.amazonaws.com/api/";
      axios
        .get("https://jsonplaceholder.typicode.com/todos/")
        .then((response) => {
