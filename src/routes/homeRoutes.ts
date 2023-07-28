@@ -2,15 +2,25 @@ import { Router, Request, Response } from 'express';
 const router = Router();
 
 router.get('/', (req: Request, res: Response) => {
-    const description = `
+  const description = `
     <!DOCTYPE html>
     <html>
     
     <head>
       <style>
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          width: 70vw;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #f5f5f5;
+        }
+    
         h2 {
           color: #333;
           font-size: 24px;
+          margin-bottom: 20px;
         }
     
         p {
@@ -39,15 +49,17 @@ router.get('/', (req: Request, res: Response) => {
           background-color: #f0f0f0;
           padding: 8px;
           border-radius: 4px;
+          overflow: auto;
+          word-wrap: break-word;
         }
     
-        body {
-          font-family: Arial, sans-serif;
-          line-height: 1.6;
-          width: 70vw;
-          display: flex;
-           margin: auto;
-          flex-direction: column;
+        a {
+          color: #007bff;
+          text-decoration: none;
+        }
+    
+        a:hover {
+          text-decoration: underline;
         }
       </style>
     </head>
@@ -58,11 +70,14 @@ router.get('/', (req: Request, res: Response) => {
         Resource Sharing) restrictions. CORS restrictions can prevent your front-end application from making requests
         directly to APIs hosted on different domains. This server bypasses those restrictions, allowing you to access
         external APIs from your client-side code.</p>
+        <p><strong>For more tools visit my site:</strong> <a href="https://yair8520.github.io/dev-tools/" target="_blank">dev-tools</a></p>
+        <p><strong>Author:</strong> Yair Gabay <a href="https://github.com/yair8520" target="_blank"> My GitHub Profile</a></p>
       <h3>How to send a request through the NoCORS Proxy Server:</h3>
       <ol>
         <li><strong>Set up your client application:</strong></li>
-        <p>Ensure you have a front-end application (e.g., React, Angular, Vue.js) running on either
-          'https://yair8520.github.io' (if deployed) or 'http://localhost:3000' (if testing locally). This client
+        <p>Ensure you have a front-end application (e.g., React, Angular, Vue.js) running on either my 
+          <a href="https://yair8520.github.io/dev-tools/#/api" target="_blank">Postman Clone</a>  or
+          <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> (if testing locally). This client
           application will make requests to external APIs through the NoCORS Proxy Server.</p>
         <li><strong>Import the HTTP client library:</strong></li>
         <p>If you're using Axios, import it in your client-side code like this:</p>
@@ -79,14 +94,16 @@ router.get('/', (req: Request, res: Response) => {
       </ol>
       <p>The NoCORS Proxy Server ensures that the appropriate CORS headers are added to the response, allowing your
         client-side application to access the requested API data without CORS-related issues.</p>
-      <p><strong>Author:</strong> Yair Gabay </p>
+      
+    
     </body>
     
     </html>
     
+    
 `;
 
-    res.send(description);
+  res.send(description);
 });
 
 export default router;

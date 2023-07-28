@@ -4,11 +4,13 @@ Welcome to the NoCORS Proxy Server!
 
 This server acts as a proxy between your front-end application and external APIs that may have CORS (Cross-Origin Resource Sharing) restrictions. CORS restrictions can prevent your front-end application from making requests directly to APIs hosted on different domains. This server bypasses those restrictions, allowing you to access external APIs from your client-side code.
 
+For more tools visit my site: [dev-tools](https://yair8520.github.io/dev-tools/)
+
 ## How to send a request through the NoCORS Proxy Server:
 
 1. Set up your client application:
 
-   - Ensure you have a front-end application (e.g., React, Angular, Vue.js) running on either 'https://yair8520.github.io' (if deployed) or 'http://localhost:3000' (if testing locally). This client application will make requests to external APIs through the NoCORS Proxy Server.
+   - Ensure you have a front-end application (e.g., React, Angular, Vue.js) running on either 'https://yair8520.github.io/dev-tools/#/api' or 'http://localhost:3000' (if testing locally). This client application will make requests to external APIs through the NoCORS Proxy Server.
 
 2. Import the HTTP client library:
 
