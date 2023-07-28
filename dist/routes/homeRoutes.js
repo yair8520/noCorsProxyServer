@@ -20,19 +20,19 @@ router.get('/', (req, res) => {
     
         h2 {
           color: #333;
-          font-size: 24px;
+          font-size: 34px;
           margin-bottom: 20px;
         }
     
         p {
           color: #555;
-          font-size: 16px;
+          font-size: 22px;
           margin-bottom: 16px;
         }
     
         li {
           color: #333;
-          font-size: 16px;
+          font-size: 22px;
           margin-bottom: 8px;
         }
     
@@ -40,6 +40,7 @@ router.get('/', (req, res) => {
           background-color: #f0f0f0;
           padding: 4px;
           border-radius: 4px;
+          font-size:20px
         }
     
         strong {
