@@ -5,7 +5,6 @@ const express_1 = require("express");
 const router = (0, express_1.Router)();
 router.all('/:url(*)', (req, res, next) => {
     const { method, body, headers } = req;
-    console.log("aoll", body);
     const targetUrl = req.url.slice(1);
     if (targetUrl === 'favicon.ico') {
         res.sendStatus(204);

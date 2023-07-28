@@ -39,7 +39,7 @@ router.get('/', (req: Request, res: Response) => {
           background-color: #f0f0f0;
           padding: 4px;
           border-radius: 4px;
-          font-size:20px
+          font-size:20px;
         }
     
         strong {

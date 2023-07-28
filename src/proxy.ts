@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import homeRoutes from './routes/homeRoutes'
 import apiRoutes from './routes/apiRoutes'
+import deployRoute from './routes/deployRoute'
 import { json, } from 'body-parser';
 import { AxiosResponse } from 'axios';
 
@@ -20,6 +21,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(json())
+app.use(deployRoute)
 app.use((error: any, req: any, res: any, next: any) => {
   if (error.type === 'entity.parse.failed') {
     const formattedError: Partial<AxiosResponse> = {

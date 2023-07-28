@@ -5,7 +5,6 @@ const router = Router();
 
 router.all('/:url(*)', (req: Request, res: Response, next: NextFunction) => {
     const { method, body, headers } = req;
-    console.log("aoll", body)
 
 
     const targetUrl = req.url.slice(1);
