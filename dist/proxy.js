@@ -24,7 +24,6 @@ const corsOptions = {
 };
 app.use((0, cors_1.default)(corsOptions));
 app.use((0, body_parser_1.json)());
-app.use(deployRoute_1.default);
 app.use((error, req, res, next) => {
     if (error.type === 'entity.parse.failed') {
         const formattedError = {
@@ -40,6 +39,7 @@ app.use((error, req, res, next) => {
 });
 app.use('/', homeRoutes_1.default);
 app.use('/api', apiRoutes_1.default);
+app.use('/webhook', deployRoute_1.default);
 app.listen(port, () => {
     console.log(`Proxy server listening at http://localhost:${port}`);
 });

@@ -21,7 +21,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(json())
-app.use(deployRoute)
+
 app.use((error: any, req: any, res: any, next: any) => {
   if (error.type === 'entity.parse.failed') {
     const formattedError: Partial<AxiosResponse> = {
@@ -37,9 +37,9 @@ app.use((error: any, req: any, res: any, next: any) => {
 })
 
 
-
 app.use('/', homeRoutes);
 app.use('/api', apiRoutes);
+app.use('/webhook', deployRoute); 
 
 
 app.listen(port, () => {
