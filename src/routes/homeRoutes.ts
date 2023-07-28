@@ -90,7 +90,7 @@ router.get('/', (req: Request, res: Response) => {
     axios.get('https://jsonplaceholder.typicode.com/todos/')
       .then(response => {
         // Handle the response data here
-        console.log(response.data);
+        console.log(response.data); 
       })</code></pre>
       </ol>
       <p>The NoCORS Proxy Server ensures that the appropriate CORS headers are added to the response, allowing your

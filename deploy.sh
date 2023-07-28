@@ -5,7 +5,7 @@ cd /home/ec2-user/noCorsProxyServer
 
 # Pull the latest changes from the master branch
 git pull origin master
-
+ 
 # Install/update dependencies (if needed)
 npm install
 
