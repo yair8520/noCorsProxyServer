@@ -97,7 +97,7 @@ router.get('/', (req, res) => {
       <p>The NoCORS Proxy Server ensures that the appropriate CORS headers are added to the response, allowing your
         client-side application to access the requested API data without CORS-related issues.</p>
       
-    <p>test 2</p>
+    <p>test 3</p>
     </body>
     
     </html>
