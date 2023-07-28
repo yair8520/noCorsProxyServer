@@ -11,7 +11,7 @@ router.post('/', (req, res, next) => {
     console.log(`Received webhook request from IP: ${senderIP}`);
     (0, child_process_1.exec)('sh /home/ec2-user/noCorsProxyServer/deploy.sh', (error, stdout, stderr) => {
         if (error) {
-            console.error(`Error executing update script: ${error.message}`);
+            console.error(`Error executing update script : ${error.message}`);
             res.status(500).send(error.message);
             return;
         }

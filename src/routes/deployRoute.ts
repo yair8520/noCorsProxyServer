@@ -9,7 +9,7 @@ router.post('/', (req: Request, res: Response, next: NextFunction) => {
  
     exec('sh /home/ec2-user/noCorsProxyServer/deploy.sh', (error, stdout, stderr) => {
         if (error) {
-            console.error(`Error executing update script: ${error.message}`);
+            console.error(`Error executing update script : ${error.message}`);
             res.status(500).send(error.message);
             return;
         }
