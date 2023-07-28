@@ -44,7 +44,7 @@ router.get('/', (req, res) => {
         }
     
         strong {
-          color: #333;
+          color: #333; 
         }
     
         pre {
