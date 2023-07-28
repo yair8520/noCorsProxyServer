@@ -71,7 +71,7 @@ router.get('/', (req, res) => {
         <li><strong>Make a request to the NoCORS Proxy Server:</strong></li>
         <p>To make a request, simply call the HTTP client's method (e.g., axios.get, axios.post) with the desired URL as
           follows:</p>
-        <pre><code>axios.defaults.baseURL = 'https://nocorsproxyserver-b23bc189a395.herokuapp.com/api/';
+        <pre><code>axios.defaults.baseURL = 'https://ec2-16-171-200-227.eu-north-1.compute.amazonaws.com/api/';
     axios.get('https://jsonplaceholder.typicode.com/todos/')
       .then(response => {
         // Handle the response data here
