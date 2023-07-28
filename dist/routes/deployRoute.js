@@ -12,7 +12,7 @@ router.post('/', (req, res, next) => {
     (0, child_process_1.exec)('sh ../../deploy.sh', (error, stdout, stderr) => {
         if (error) {
             console.error(`Error executing update script: ${error.message}`);
-            res.status(500).send('Update failed');
+            res.status(500).send(error.message);
             return;
         }
         console.log(`Update script output: ${stdout}`);
