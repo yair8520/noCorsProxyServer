@@ -4,7 +4,8 @@ Welcome to the NoCORS Proxy Server!
 
 This server acts as a proxy between your front-end application and external APIs that may have CORS (Cross-Origin Resource Sharing) restrictions. CORS restrictions can prevent your front-end application from making requests directly to APIs hosted on different domains. This server bypasses those restrictions, allowing you to access external APIs from your client-side code.
 
-For more tools visit my site: [dev-tools](https://yair8520.github.io/dev-tools/)
+**For more tools visit my site:** [**dev-tools**](https://yair8520.github.io/dev-tools/)
+
 
 ## How to send a request through the NoCORS Proxy Server:
 
