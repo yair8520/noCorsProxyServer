@@ -5,7 +5,7 @@ export function convertHeadersToAxiosConfig(headers: any): AxiosRequestConfig['h
     const commonHeaders = [
         "Accept",
         "Content-Type",
-        "authorization",
+        "Authorization",
         "User-Agent",
         "Cookie",
         "Cache-Control",
@@ -14,9 +14,10 @@ export function convertHeadersToAxiosConfig(headers: any): AxiosRequestConfig['h
         "Content-Length",
         "Host",
     ];
-    for (const key of Object.keys(headers)) {
-        if (commonHeaders.includes(key.toLowerCase())) {
-            convertedHeaders[key] = headers[key] as string;
+    for (const commonHeader of commonHeaders) {
+        const lowercaseKey = commonHeader.toLowerCase();
+        if (headers.hasOwnProperty(lowercaseKey)) {
+            convertedHeaders[commonHeader] = headers[lowercaseKey] as string;
         }
     }
     return convertedHeaders;
