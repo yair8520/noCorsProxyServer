@@ -10,7 +10,7 @@ function convertHeadersToAxiosConfig(headers) {
     const commonHeaders = [
         "Accept",
         "Content-Type",
-        "Authorization",
+        "authorization",
         "User-Agent",
         "Cookie",
         "Cache-Control",
