@@ -6,6 +6,7 @@ export function convertHeadersToAxiosConfig(headers: any): AxiosRequestConfig['h
         "accept",
         "content-type",
         "authorization",
+        "user-agent",
         "cookie",
         "cache-control",
         "origin",

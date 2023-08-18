@@ -11,6 +11,7 @@ function convertHeadersToAxiosConfig(headers) {
         "accept",
         "content-type",
         "authorization",
+        "user-agent",
         "cookie",
         "cache-control",
         "origin",
