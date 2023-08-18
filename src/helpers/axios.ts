@@ -3,24 +3,25 @@ import axios from 'axios'
 export function convertHeadersToAxiosConfig(headers: any): AxiosRequestConfig['headers'] {
     const convertedHeaders: AxiosRequestConfig['headers'] = {};
     const commonHeaders = [
-        "Accept",
-        "Content-Type",
-        "Authorization",
-        "User-Agent",
-        "Cookie",
-        "Cache-Control",
-        "Origin",
-        "Referer",
-        "Content-Length",
-        "Host",
+        "accept",
+        "content-type",
+        "authorization",
+        "cookie",
+        "cache-control",
+        "origin",
+        "referer",
+        "content-length",
+        "host",
     ];
     for (const key of Object.keys(headers)) {
-        if (commonHeaders.includes(key.toLowerCase())) {
+        const lowercaseKey = key.toLowerCase();
+        if (commonHeaders.includes(lowercaseKey)) {
             convertedHeaders[key] = headers[key] as string;
         }
     }
     return convertedHeaders;
 }
+
 
 
 export const makeAxiosCall = (axiosConfig: AxiosRequestConfig): Promise<AxiosResponse> => {

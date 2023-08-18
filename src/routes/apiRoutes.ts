@@ -6,7 +6,6 @@ const router = Router();
 router.all('/:url(*)', (req: Request, res: Response, next: NextFunction) => {
     const { method, body, headers } = req;
 
-
     const targetUrl = req.url.slice(1);
     if (targetUrl === 'favicon.ico') {
         res.sendStatus(204);
