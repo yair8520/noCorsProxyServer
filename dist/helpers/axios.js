@@ -8,20 +8,19 @@ const axios_1 = __importDefault(require("axios"));
 function convertHeadersToAxiosConfig(headers) {
     const convertedHeaders = {};
     const commonHeaders = [
-        "accept",
-        "content-type",
-        "authorization",
-        "user-agent",
-        "cookie",
-        "cache-control",
-        "origin",
-        "referer",
-        "content-length",
-        "host",
+        "Accept",
+        "Content-Type",
+        "Authorization",
+        "User-Agent",
+        "Cookie",
+        "Cache-Control",
+        "Origin",
+        "Referer",
+        "Content-Length",
+        "Host",
     ];
     for (const key of Object.keys(headers)) {
-        const lowercaseKey = key.toLowerCase();
-        if (commonHeaders.includes(lowercaseKey)) {
+        if (commonHeaders.includes(key.toLowerCase())) {
             convertedHeaders[key] = headers[key];
         }
     }
