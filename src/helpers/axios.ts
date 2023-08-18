@@ -12,11 +12,11 @@ export function convertHeadersToAxiosConfig(headers: any): AxiosRequestConfig['h
         "Origin",
         "Referer",
         "Content-Length",
+        "Host",
     ];
-    for (const commonHeader of commonHeaders) {
-        const lowercaseKey = commonHeader.toLowerCase();
-        if (headers.hasOwnProperty(lowercaseKey)) {
-            convertedHeaders[commonHeader] = headers[lowercaseKey] as string;
+    for (const key of Object.keys(headers)) {
+        if (commonHeaders.includes(key.toLowerCase())) {
+            convertedHeaders[key] = headers[key] as string;
         }
     }
     return convertedHeaders;
