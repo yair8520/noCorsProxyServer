@@ -17,7 +17,6 @@ function convertHeadersToAxiosConfig(headers) {
         "Origin",
         "Referer",
         "Content-Length",
-        "Host",
     ];
     for (const commonHeader of commonHeaders) {
         const lowercaseKey = commonHeader.toLowerCase();
