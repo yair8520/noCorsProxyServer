@@ -6,26 +6,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.makeAxiosCall = exports.convertHeadersToAxiosConfig = void 0;
 const axios_1 = __importDefault(require("axios"));
 function convertHeadersToAxiosConfig(headers) {
-    console.log("before", headers);
+    console.log(headers);
     const convertedHeaders = {};
     const commonHeaders = [
-        "accept",
-        "content-type",
+        "Accept",
+        "Content-Type",
         "authorization",
-        "user-agent",
-        "cookie",
-        "cache-control",
-        "origin",
-        "referer",
-        "content-length",
-        "host",
+        "User-Agent",
+        "Cookie",
+        "Cache-Control",
+        "Origin",
+        "Referer",
+        "Content-Length",
+        "Host",
     ];
     for (const key of Object.keys(headers)) {
         if (commonHeaders.includes(key.toLowerCase())) {
             convertedHeaders[key] = headers[key];
         }
     }
-    console.log("after", convertedHeaders);
+    console.log(headers);
     return convertedHeaders;
 }
 exports.convertHeadersToAxiosConfig = convertHeadersToAxiosConfig;

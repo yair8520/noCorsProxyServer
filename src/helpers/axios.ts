@@ -1,26 +1,26 @@
 import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 import axios from 'axios'
 export function convertHeadersToAxiosConfig(headers: any): AxiosRequestConfig['headers'] {
-    console.log("before", headers);
+    console.log(headers)
     const convertedHeaders: AxiosRequestConfig['headers'] = {};
     const commonHeaders = [
-        "accept",
-        "content-type",
+        "Accept",
+        "Content-Type",
         "authorization",
-        "user-agent",
-        "cookie",
-        "cache-control",
-        "origin",
-        "referer",
-        "content-length",
-        "host",
+        "User-Agent",
+        "Cookie",
+        "Cache-Control",
+        "Origin",
+        "Referer",
+        "Content-Length",
+        "Host",
     ];
     for (const key of Object.keys(headers)) {
         if (commonHeaders.includes(key.toLowerCase())) {
             convertedHeaders[key] = headers[key] as string;
         }
     }
-    console.log("after", convertedHeaders);
+    console.log(headers)
 
     return convertedHeaders;
 }
