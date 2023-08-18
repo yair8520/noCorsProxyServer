@@ -11,7 +11,7 @@ const deployRoute_1 = __importDefault(require("./routes/deployRoute"));
 const body_parser_1 = require("body-parser");
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
-const allowedOrigins = ['https://yair8520.github.io', 'http://localhost:3001'];
+const allowedOrigins = ['https://yair8520.github.io', 'http://localhost:3000'];
 const corsOptions = {
     origin: function (origin, callback) {
         if (allowedOrigins.includes(origin) || !origin) {

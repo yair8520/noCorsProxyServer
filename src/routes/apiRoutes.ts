@@ -1,22 +1,18 @@
 import { convertHeadersToAxiosConfig, makeAxiosCall } from '../helpers/axios';
 import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { Request, Response, NextFunction, Router } from 'express';
+import { Request, Response, Router } from 'express';
+import { validateUrlMiddleware } from '../helpers/url';
 const router = Router();
 
-router.all('/:url(*)', (req: Request, res: Response, next: NextFunction) => {
+router.all('/:url(*)', validateUrlMiddleware, (req: Request, res: Response) => {
     const { method, body, headers } = req;
 
-
     const targetUrl = req.url.slice(1);
-    if (targetUrl === 'favicon.ico') {
-        res.sendStatus(204);
-        return;
-    }
-
     const axiosConfig: AxiosRequestConfig = {
         method,
         url: targetUrl,
         data: body,
+        timeout: 12000,
         headers: convertHeadersToAxiosConfig(headers),
     };
 

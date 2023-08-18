@@ -8,7 +8,7 @@ import { AxiosResponse } from 'axios';
 
 const app = express();
 const port = process.env.PORT || 3000;
-const allowedOrigins = ['https://yair8520.github.io', 'http://localhost:3001'];
+const allowedOrigins = ['https://yair8520.github.io', 'http://localhost:3000'];
 const corsOptions = {
   origin: function (origin: any, callback: any) {
     if (allowedOrigins.includes(origin) || !origin) {
@@ -19,7 +19,6 @@ const corsOptions = {
   },
 };
 app.use(cors(corsOptions));
-
 app.use(json())
 
 app.use((error: any, req: any, res: any, next: any) => {
